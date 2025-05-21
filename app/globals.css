@@ -3,19 +3,123 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 217 91% 60%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 221.2 83.2% 53.3%;
+  --radius: 0.5rem;
+  --primary-gradient-start: 213 84% 53%;
+  --primary-gradient-end: 220 76% 49%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 217 91% 60%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 224.3 76.3% 48%;
+}
+
+* {
+  @apply border-border;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-background text-foreground;
 }
+
+/* RTL support */
+html[dir="rtl"] .flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Custom button styles */
+.custom-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 17.5px;
+  font-weight: 500;
+  color: #f4f4f5;
+  background-image: linear-gradient(to bottom, #2487eb, #1d67dd);
+  border: 1px solid #2487eb;
+  cursor: pointer;
+  transition: opacity 0.2s ease-out;
+  white-space: nowrap;
+}
+
+.custom-button:hover {
+  opacity: 0.9;
+}
+
+.custom-button-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 17.5px;
+  font-weight: 500;
+  color: #2487eb;
+  background-color: transparent;
+  border: 1px solid #2487eb;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out;
+  white-space: nowrap;
+}
+
+.custom-button-outline:hover {
+  background-color: rgba(36, 135, 235, 0.1);
+}
+
+.custom-button-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 17.5px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out;
+  white-space: nowrap;
+}
+
+.custom-button-white:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
